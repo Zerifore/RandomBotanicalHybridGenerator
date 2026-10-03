@@ -98,15 +98,57 @@ const flowerOddities = [
   "Hot Lips Plant", "Ghost Orchid", "Jabuticaba", "Parrot Flower", "Bird of Paradise"
 ];
 
+const fruitOddities = [
+  "Sandbox Tree", "Squirting Cucumber", "Witch Hazel", "Javan Cucumber",
+  "Honesty / Silver Dollar Plant", "Prairie Smoke", "Devil's Claw", "Water Caltrop / Devil's Pod",
+  "Durian", "Banksia", "Buddha's Hand", "Hala Fruit",
+  "Osage Orange", "American Bladdernut", "White Baneberry / Doll's Eyes", "Rosary Pea",
+  "Bitter Melon", "Ackee", "Coco de Mer", "Sausage Tree", "Jabuticaba"
+];
+
+const rootOddities = [
+  "Walking Palm", "Screw Pine", "Moreton Bay Fig", "Kapok Tree",
+  "Black Mangrove", "Bald Cypress", "Ghost Orchid", "Vanilla Orchid",
+  "Spiny Root Palm", "Water Hyacinth", "Water Lettuce", "Bull Kelp Holdfast",
+  "Mandrake", "Asian Ginseng", "Cassava", "Dahlia",
+  "Australian Christmas Tree", "Bird's-nest Orchid", "Crocus", "Soybean"
+]
+
+const surfaceOddities = [
+  "Gympie-Gympie / Stinging Tree", "Porcupine Tomato", "Teddy Bear Cholla", "Bunny Ears Cactus",
+  "Devil's Walkingstick", "Sawtooth Sedge / Razor Grass", "Old Man Cactus", "Cobweb Houseleek",
+  "Lamb's Ear", "Edelweiss", "Blue Chalksticks", "Carnauba Palm",
+  "Silver Tree Fern", "Black Rose Aeonium", "Pebbled Haworthia", "Shingle Plant",
+  "Living Rock Cactus", "Resin Spurge", "Cape Sundew", "Tarweed",
+  "Sleepy Catchfly", "Honey Locust"
+]
+
+const foliageColorOddities = [
+  "Peacock Begonia", "Rainbow Moss / Peacock Fern", "Raven ZZ Plant", "Black Magic Taro",
+  "Persian Shield", "Purple Shamrock", "Bloodleaf", "Ti Plant",
+  "Pink Princess Philodendron", "Triostar Stromanthe", "Polka Dot Begonia", "Red Veined Sorrel",
+  "Chartreuse Sweet Potato Vine", "Petra Croton", "Fishnet Stockings Coleus", "Red Flash Caladium",
+  "Red Siam Aglaonema", "Strawberry Star Caladium", "Chocolate Covered Cherry Coleus", "Escargot Rex Begonia",
+  "Nanouk Tradescantia", "Caramel Coral Bells", "Black Pearl Coral Bells", "White Christmas Caladium"
+]
+
+const bloomColorOddities = [
+  "Jade Vine", "Blue Puya", "Green Birdflower", "Green Hellebore",
+  "Black Velvet Petunia", "Chocolate Cosmos", "Black Bat Flower", "Queen of Night Tulip",
+  "Himalayan Blue Poppy", "Spring Gentian", "Sea Holly", "Night Sky Petunia",
+  "Candy Cane Sorrel", "Parrot Tulip", "Flame Lily", "Dracula Orchid",
+  "Skeleton Flower", "Moonflower", "Showy Medinilla", "Copper Iris",
+  "Cherokee Sunset Coneflower", "Bird of Paradise"
+]
+
 const extras = [
-  "unicorn horn", "nose horn", "reindeer antlers", "long eyelashes",
-  "huge ears", "cactus spikes", "huge eyes", "piebaldism", "insect antennae", "moose antlers",
-  "bee stinger", "glowing eyes", "iridescence", "long whiskers", "fangs", "extra eyes",
-  "sheep horns", "albinism", "melanism", "spines along the back", "bioluminescent",
-  "erythrism", "heterochromia", "leucism", "xanthochromish", "hairless", "embedded gems", "plants", "mushrooms",
-  "alien antennae", "sparkles", "ear tufts", "dragon wings", "bird wings", "multiple tails", "long claws", "mane",
-  "fluffy cheeks", "fluffy ears", "colourful spots", "colourful stripes", "tusks", "roe deer antlers", "slime",
-  "ankole watusi horns", "gills", "anglerfish lure", "crest feathers", "none"
+ "Bioluminescence", "Spikes / Thorns", "Giant Fruit / Seeds", "Extra Foliage Roll", "Extra Flower Roll",
+ "Extra Fruit / Seed Roll", "Two Extras", "Additional Color", "Sentient / Conscious",
+ "Carnivorous", "Epiphytic", "Has a Face(s)", "Vine Appendages", "Edible",
+ "Floating / Levitation", "Sparkles", "Slime / Mucilage", "None", "Embedded Gems",
+ "Symbiotic Fungi", "Bleeding Sap", "Whispering / Chimes", "Iridescence", "Albinism",
+ "Metallic Sheen", "Hallucinogenic Spores", "Translucent / Glass", "Cold to Touch", "Hot to Touch",
+ "Non-Corporeal", "Variegation", "Colorful Spots", "Fur", "Aerial Roots", "Feathers", "Melanism", "Colorful Stripes"
 ];
 
 // Trigger words for warning
@@ -131,14 +173,14 @@ function checkForArachnids(animal) {
 // Each slot gets its own small pool of 15-25 oddities
 const partMap = [
   baseOddities,    // slot 0: Base / Habit
-  trunkOddities,   // slot 1: Trunk / Stem
+  stemOddities,   // slot 1: Trunk / Stem
   foliageOddities,    // slot 2: Leaves
   flowerOddities,   // slot 3: Bloom / Fertile Part
   fruitOddities,   // slot 4: Fruit / Seed Pod
   rootOddities,    // slot 5: Roots
-  surfaceOddities  // slot 6: Surface / Armor
-  foliageColorOddities
-  bloomColorOddities
+  surfaceOddities,  // slot 6: Surface / Armor
+  foliageColorOddities,
+  bloomColorOddities,
 ];
 
 function rollSlot(commonArray, oddityArray) {
