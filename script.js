@@ -1,69 +1,75 @@
+const commonPlants = [
+  // Trees
+  "White Oak", "Sugar Maple", "Weeping Willow", "Paper Birch", "Eastern White Pine",
+  "American Beech", "Southern Magnolia", "American Sycamore", "Sweetgum", "Apple Tree",
+  "Flowering Dogwood", "Coconut Palm", "Coast Redwood", "Blue Gum Eucalyptus", "Olive Tree",
+  "Umbrella Thorn Acacia", "Sakura", "Mango Tree", "Jacaranda", "Pear Tree",
+  "Peach Tree", "Citrus Tree", "Ginkgo Tree", "Bald Cypress", "Palmetto", "Sago Palm",
+
+  // Shrubs
+  "Common Lilac", "Bigleaf Hydrangea", "Mountain Laurel", "Boxwood", "Elderberry",
+  "Forsythia", "Staghorn Sumac", "Winterberry Holly", "Common Juniper", "Rose of Sharon",
+  "Witch Hazel", "Rosemary", "Tea Plant", "Coffea arabica", "Pomegranate",
+  "Lavender", "Tropical Hibiscus", "Blueberry", "Wild Blackberry", "Garden Rose",
+
+  // Vines & Climbers
+  "Grapevine", "English Ivy", "Chinese Wisteria", "Virginia Creeper", "Morning Glory",
+  "Japanese Honeysuckle", "Clematis", "Poison Ivy", "Bougainvillea", "Kudzu",
+  "Golden Pothos", "Black Pepper", "Passion Fruit", "Common Jasmine", "Vanilla Orchid",
+
+  // Herbs, Forbs & Groundcovers
+  "Common Sunflower", "Common Dandelion", "Sacred Lotus", "Opium Poppy", "Garden Tulip",
+  "Bird of Paradise", "Peace Lily", "African / French Marigold", "Moth Orchid", "Aloe Vera",
+  "Snapdragon", "Wild Carrot", "Carnation", "Saffron Crocus", "White Clover",
+  "Broadleaf Plantain", "Common Purslane", "Wild Strawberry", "Creeping Thyme", "Hen and Chicks",
+  "Stinging Nettle", "Spearmint", "Beach Morning Glory", "Gotu Kola", "Common Wood Sorrel",
+  "Inchplant", "Sweet Violet", "Globe Thistle",
+
+  // Grasses, Rushes & Reeds
+  "Giant Bamboo", "Corn / Maize", "Pampas Grass", "Sugar Cane", "Wheat",
+  "Paddy Rice", "Common Reed", "Lemongrass", "Purple Fountain Grass", "Barley",
+  "Giant River Cane", "Kentucky Bluegrass",
+
+  // Ferns & Lycophytes
+  "Boston Fern", "Bracken Fern", "Australian Tree Fern", "Maidenhair Fern", "Bird's Nest Fern",
+  "Staghorn Fern", "Ostrich Fern", "Rabbit's Foot Fern", "Field Horsetail",
+
+  // Succulents & Cacti
+  "Prickly Pear Cactus", "Jade Plant", "American Agave", "Mother-in-Law's Tongue", "Golden Barrel Cactus",
+  "Holiday Cactus", "Crown of Thorns", "String of Pearls", "Zebra Haworthia", "Saguaro Cactus",
+  "Pencil Cactus",
+
+  // Garden Vegetables & Crops
+  "Garden Tomato", "Banana", "Garden Pea", "Pumpkin", "Potato",
+  "Chili / Bell Pepper", "Pineapple", "Beetroot", "Globe Artichoke", "Eggplant",
+  "Cabbage", "Watermelon", "Sweet Potato", "Soybean", "Garden Strawberry",
+  "Broccoli", "Cauliflower", "Lettuce", "Cucumber", "Elephant Ear / Taro",
+  "Ginger / Turmeric", "Onion / Allium",
+
+  // Aquatics & Marine
+  "White Water Lily", "Water Hyacinth", "Giant Kelp", "Common Cattail", "Common Duckweed",
+  "Water Lettuce", "Sargassum", "Eelgrass", "Bull Kelp", "Hornwort",
+  "Water Chestnut", "Sea Lettuce", "Red Mangrove",
+
+  // Mosses, Lichens & Bryophytes
+  "Haircap Moss", "Sphagnum Moss", "Reindeer Lichen", "Common Liverwort", "Old Man's Beard",
+  "Common Sunburst Lichen", "Pincushion Moss", "Oakmoss", "British Soldiers Lichen",
+
+  // Carnivorous Plants
+  "Venus Flytrap", "Tropical Pitcher Plant", "Yellow Trumpet / Purple Pitcher Plant", "Round-leaved Sundew", "Common Butterwort",
+  "Common Bladderwort", "Cobra Lily / California Pitcher Plant", "Australian Pitcher Plant",
+
+  // Epiphytes & Air Plants
+  "Blushing Air Plant", "King Air Plant", "Silver Vase Bromeliad", "Monstera deliciosa", "Tail Flower",
+  "Scarlet Star Bromeliad", "Mistletoe Cactus", "Hoya carnosa", "European / American Mistletoe"
+]
+
+const baseOddities = [
+  "harvest mouse",
+]
+
 const base = [
-  "harvest mouse", "duck", "horse", "moose", "sheep", "crocodile", "bat",
-  "seal", "monkey", "meerkat", "brown bear", "sloth bear", "elephant", "gazelle",
-  "lion", "tiger", "wolf", "camel", "otter", "chameleon", "flamingo",
-  "large white pig", "wild boar", "nubian goat", "nigerian goat", "irish cob",
-  "arabian horse", "okapi", "maned wolf", "fosse", "slow lori", "angora rabbit",
-  "axolotl", "bearded vulture", "red panda", "cheetah", "glass frog", "mantis shrimp",
-  "sun bear", "aye-aye", "markhor", "saiga antelope", "sloth", "sea turtle",
-  "pangolin", "gharial", "marine iguana", "white tiger", "porcupine", "african crowned crane",
-  "african wild dog", "leopard", "bat-eared fox", "bongo", "orangutan", "sea lion", "caracal",
-  "giraffe", "rhino", "howler monkey", "mountain lion", "koala", "arctic fox", "panther",
-  "millipede", "aardvark", "afghan hound", "african civet", "african penguin", "akita", "anteater",
-  "arctic hare", "armadillo", "baboon", "barn owl", "bedlington terrier", "bison", "bobcat", "brown bear",
-  "budgerigar", "capybara", "cassowary", "clownfish", "coati", "common frog",
-  "cottontop tamarin", "coyote", "dachshund", "emu", "european hare", "fennec fox", "hammerhead shark",
-  "gemsbok", "golden pheasant", "common pheasant", "grasshopper", "pelican", "honey bee", "hoopoe bird", "jackal",
-  "king penguin", "komodo dragon", "ladybug", "ring-tailed lemur", "llama", "lynx", "japanese macaque",
-  "mountain goat", "tarantula", "opossum", "pine marten", "pirahna", "polar bear", "red squirrel",
-  "red fox", "kangaroo", "roborovski hamster", "ibis", "scarlet macaw", "seahorse", "secretary bird", "serval",
-  "snow leopard", "hyena", "toucan", "weasel", "wildebeest", "wolverine", "abyssinian",
-  "giant tortoise", "river dolphin", "clawed frog",
-  "angelfish", "ant", "anteater", "arctic hare", "giant hornet",
-  "barn owl", "barracuda", "basenji", "basking shark", "basset hound", "bearded dragon", "beaver", "bedlington terrier",
-  "bichon frise", "birman", "black russian terrier", "bloodhound", "blue jay", "blue whale",
-  "bobcat", "bombay", "booby", "border collie", "boxer",
-  "bumblebee", "bullfrog", "bull shark", "bull terrier", "great white shark", "cassowary",
-  "t-rex", "stegosaurus", "catfish", "camel", "chamois", "caterpillar", "chicken", "chinchilla", "chipmunk",
-  "collared peccary", "colossal squid", "cichlid", "clownfish", "cuscus", "darwin's frog", "dhole", "discus",
-  "dodo", "dogue de bordeaux", "donkey", "dragonfly", "dormouse", "earwig", "echidna", "emperor tamarin",
-  "fishing cat", "flamingo", "fangtooth", "ferret", "gecko", "gila monster", "german shepherd", "gopher",
-  "grouse", "harpy eagle", "hippopotamus", "heron", "honey badger", "narwhal", "green anole",
-  "golden retriever", "lamprey", "kiwi", "mudskipper", "potoo", "mandarin fish", "lovebird",
-  "wigeon", "saola", "cuban snail", "bald ibis", "ploughshare tortoise", "resplendent quetza",
-  "angel shark", "golden-rumped elephant shrew", "peacock tarantula", "bumblebee", "dama gazelle",
-  "blue poison dart frog", "red-eyed tree frog", "golden poison frog", "chinese crested",
-  "mimic poison frog", "amazon milk frog", "dyeing dart frog", "phantasmal poison frog", "lilac-breasted roller",
-  "swallowtail butterfly", "california red-sided garter snake", "gouldian finch", "rosy maple moth", "mandarin duck",
-  "san francisco garter snake", "rainbow boa", "emerald tree boa", "jewel bug", "betta fish", "amur leopard",
-  "vaquita", "javan rhino", "baiji dolphin", "hirola", "fiery-throated hummingbird", "carnotaurus",
-  "madagascar pochard", "nile lechwe", "iberian lynx", "zebu", "yak", "scarlet macaw", "mandarin duck", "piebald peacock",
-  "rainbow lorikeet", "harlequin tuskfish", "electric blue gecko", "red panda", "killer whale",
-  "blue morpho butterfly", "red-eyed tree frog", "rainbow trout", "green anole", "doberman",
-  "leaf insect", "yellow tang", "rainbow bee-eater", "blue-ringed octopus", "budgerigar", "british timber",
-  "pink fairy armadillo", "golden pheasant", "blue jay", "eurasian jay", "mandarin rat snake",
-  "blue gourami", "rainbow wrasse", "scarlet tanager", "green iguana", "mandarin vole",
-  "blue-tailed skink", "scarlet ibis", "glossy ibis", "mandarin catfish", "ringtail possum",
-  "rice weevil", "centipede", "cockroach", "mosquito", "philippine eagle", "gharial",
-  "cleaner shrimp", "rain frog", "european pine marten", "european badger", "eurasian otter", "wolverine", "stoat",
-  "honey badger", "leaf sheep", "ocean angel", "palmato gecko", "muntjac deer", "bare-throated bellbird",
-  "king bird-of-paradise", "wilson's bird-of-paradise",
-  "java mouse-deer", "blue ridge two-lined salamander", "aardwolf", "numbat", "chihuahua",
-  "whippet", "shih tzu", "puli", "eastern bluebird", "peregrine falcon", "jellyfish", "horseshoe crab", "hedgehog",
-  "tyrannosaurus", "triceratops", "stegosaurus", "parasaurolophus", "harpy", "chimera",
-  "allosaurus", "brachiosaurus", "ankylosaurus", "utahraptor", "pterodactylus", "spinosaurus", "griffin",
-  "leafy sea dragon", "musk deer", "blue glaucus", "goldfinch", "spiny softshell turtle",
-  "budgerigar", "goldcrest", "common yellowthroat", "welcome swallow", "white-throated swift",
-  "black vulture", "violet-green swallow", "house finch", "yellow-bellied sapsucker", "common moorhen", "great crested grebe",
-  "chimney swift", "silvereye", "eurasian golden oriole", "pink-eared duck",
-  "black-chinned hummingbird", "lazuli bunting", "anna's hummingbird", "green heron", "eurasian jay",
-  "yellow-breasted chat", "chestnut-collared longspur", "yellow-billed cuckoo", "tui", "superb lyrebird",
-  "american white pelican", "golden tortoise beetle", "indian painted grasshopper",
-  "cairns birdwing", "thorn treehopper", "spiny flower mantis", "european peacock butterfly", "lantern bug",
-  "malay lacewing", "rainbow stag beetle", "rosy maple moth", "tailed jay", "pygmy rabbit", "pygmy marmoset", "etruscan shrew",
-  "japanese serow", "azara's agouti", "black lemur", "prairie dog",
-  "dwarf mongoose", "reindeer", "european mink", "harvest mouse", "kulan", "patagonian mara", "przewalski's wild horse",
-  "pygmy marmoset", "wallaby", "takin", "vicuna", "white-face saki"
+  ...commonPlants, ...baseOddities 
 ];
 
 const head = [
@@ -616,7 +622,27 @@ function checkForArachnids(animal) {
   return arachnidTriggers.some(trigger => animal.toLowerCase().includes(trigger));
 }
 
-const partMap = [base, head, ears, eyes, nose, legs, feet, tail, coat, colour];
+const partMap = [base, stem, foliage, flower, fruit, roots, surface, foliageColor, bloomColor];
+
+// Each slot gets its own small pool of 15-25 oddities
+const oddityMap = [
+  baseOddities,    // slot 0: Base / Habit
+  trunkOddities,   // slot 1: Trunk / Stem
+  leafOddities,    // slot 2: Leaves
+  bloomOddities,   // slot 3: Bloom / Fertile Part
+  fruitOddities,   // slot 4: Fruit / Seed Pod
+  rootOddities,    // slot 5: Roots
+  surfaceOddities  // slot 6: Surface / Armor
+];
+
+function rollSlot(commonArray, oddityArray) {
+  // 60% chance for common, 40% chance for oddity
+  const rollOddity = Math.random() >= 0.60;
+  if (rollOddity && oddityArray && oddityArray.length > 0) {
+    return oddityArray[Math.floor(Math.random() * oddityArray.length)];
+  }
+  return commonArray[Math.floor(Math.random() * commonArray.length)];
+}
 
 function generateAnimalWithAnimation(index) {
   const button = document.querySelector(`button[onclick='generateAnimalWithAnimation(${index})']`);
@@ -625,11 +651,13 @@ function generateAnimalWithAnimation(index) {
   button.disabled = true;
   let count = 0;
   const interval = setInterval(() => {
-    element.textContent = arr[Math.floor(Math.random() * arr.length)];
+    // Rolls during shuffle animation
+    element.textContent = rollSlot(commonPlants, arr);
     count++;
     if (count > 20) {
       clearInterval(interval);
-      const final = arr[Math.floor(Math.random() * arr.length)];
+      // Final landing roll
+      const final = rollSlot(commonPlants, arr);
       element.textContent = final;
       button.disabled = false;
       if (checkForArachnids(final)) showArachnophobiaWarning(final);
