@@ -6,7 +6,7 @@ Hello! This repo is made from the iconic IG tool, Random Animal Generator by Tui
 This project was started because Tuimiz had a thought that people could make random animals easy! That's how they made it? Code and Dreams. I made the plant generator simply by altering their lists and adding an "Oddities" portion to each catagory, ensuring a nice mix of common plants and botanical oddities!
 
 ## How to Use
-To use this, go to: [https://gracewqma.github.io/TuimizRandonAnimalGenerator/](https://zerifore.github.io/RandomBotanicalHybridGenerator/), then click the buttons to begin!
+To use this, go to: [https://zerifore.github.io/RandomPlantHybridGenerator/](https://zerifore.github.io/RandomPlantHybridGenerator/), then click the buttons to begin!
 
 ## Contributors
 [![Contributors](https://contrib.rocks/image?repo=gracewqma/TuimizRandonAnimalGenerator)](https://github.com/gracewqma/TuimizRandonAnimalGenerator/graphs/contributors)
