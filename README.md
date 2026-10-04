@@ -9,7 +9,7 @@ This project was started because Tuimiz had a thought that people could make ran
 To use this, go to: [https://zerifore.github.io/RandomPlantHybridGenerator/](https://zerifore.github.io/RandomPlantHybridGenerator/), then click the buttons to begin!
 
 ## Contributors
-[![Contributors](https://contrib.rocks/image?repo=gracewqma/TuimizRandonAnimalGenerator)](https://github.com/gracewqma/TuimizRandonAnimalGenerator/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=gracewqma/TuimizRandonAnimalGenerator)](https://github.com/gracewqma/TuimizRandonAnimalGenerator/graphs/contributors)[![Contributors](https://contrib.rocks/image?repo=Zerifore/RandomPlantHybridGenerator)](https://github.com/Zerifore/RandomPlantHybridGenerator/graphs/contributors)
 
 ## How to contribute
 [![Fork the repo](https://img.shields.io/badge/Fork%20this%20repo-%E2%98%95%EF%B8%8F-blue?style=for-the-badge)](https://github.com/gracewqma/TuimizRandonAnimalGenerator/fork)  
