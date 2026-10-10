@@ -95,7 +95,7 @@ const flowerOddities = [
   "Staghorn Fern", "Bunya Pine", "Breadtree Cycad", "Bristlecone Pine",
   "Welwitschia", "Titan Arum", "Bat Plant", "Pelican Flower",
   "Jack-in-the-Pulpit", "Voodoo Lily", "Flying Duck Orchid", "Bee Orchid",
-  "Hot Lips Plant", "Ghost Orchid", "Jabuticaba", "Parrot Flower", "Bird of Paradise"
+  "Hot Lips Plant", "Ghost Orchid", "Jabuticaba", "Parrot Flower", "Bird of Paradise", "Fire Lily"
 ];
 
 const fruitOddities = [
